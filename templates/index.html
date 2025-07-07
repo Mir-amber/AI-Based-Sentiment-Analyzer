@@ -1,0 +1,29 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI-Based Sentiment Analyzer</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    textarea { width: 400px; padding: 10px; }
+    button { padding: 10px 20px; }
+    .result { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>AI-Based Sentiment Analyzer</h1>
+  <form method="post">
+    <label for="review">Enter your review:</label><br><br>
+    <textarea id="review" name="review" rows="4" required></textarea><br><br>
+    <button type="submit">Analyze Sentiment</button>
+  </form>
+
+  {% if sentiment %}
+    <div class="result">
+      <h3>Result:</h3>
+      <p><strong>Sentiment:</strong> {{ sentiment }}</p>
+      <p><strong>Confidence Score:</strong> {{ score }}</p>
+    </div>
+  {% endif %}
+</body>
+</html>
